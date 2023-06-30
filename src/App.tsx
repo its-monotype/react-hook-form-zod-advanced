@@ -87,6 +87,7 @@ export const App = () => {
     >
       <input placeholder="Name" {...register('name')} />
       {errors.name?.message && <p>{errors.name?.message}</p>}
+
       <input
         type="number"
         placeholder="Age"
@@ -95,6 +96,7 @@ export const App = () => {
         })}
       />
       {errors.age?.message && <p>{errors.age?.message}</p>}
+
       <input
         type="date"
         {...register('dateOfBirth', {
@@ -102,10 +104,13 @@ export const App = () => {
         })}
       />
       {errors.dateOfBirth?.message && <p>{errors.dateOfBirth?.message}</p>}
+
       <input type="tel" placeholder="Phone number" {...register('phone')} />
       {errors.phone?.message && <p>{errors.phone?.message}</p>}
+
       <input placeholder="Website" {...register('website')} />
       {errors.website?.message && <p>{errors.website?.message}</p>}
+
       <Controller
         name="avatar"
         control={control}
@@ -127,6 +132,7 @@ export const App = () => {
         <img className="w-20" src={avatarPreview} alt="Avatar" />
       )}
       {errors.avatar?.message && <p>{errors.avatar?.message}</p>}
+
       <Controller
         name="additionalPictures"
         control={control}
@@ -149,9 +155,6 @@ export const App = () => {
           />
         )}
       />
-      {errors.additionalPictures?.message && (
-        <p>{errors.additionalPictures?.message}</p>
-      )}
       {additionalPicturesPreviews && (
         <div className="flex gap-2 items-center">
           {additionalPicturesPreviews.map((p) => (
@@ -159,6 +162,10 @@ export const App = () => {
           ))}
         </div>
       )}
+      {errors.additionalPictures?.message && (
+        <p>{errors.additionalPictures?.message}</p>
+      )}
+
       <button>Submit</button>
     </form>
   );
